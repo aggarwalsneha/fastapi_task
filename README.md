@@ -25,7 +25,7 @@ Run the FastAPI application with:
 uvicorn app:app --reload
 This command starts the server on http://127.0.0.1:8000. You can visit this URL in your web browser to see the automatically generated API documentation and test the API endpoints.
 
-**API Endpoints**
+**API Endpoints**   
 The system exposes several RESTful endpoints:
 
 POST /students: Create a new student record.
