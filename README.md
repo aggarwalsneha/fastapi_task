@@ -26,9 +26,9 @@ uvicorn app:app --reload
 This command starts the server on http://127.0.0.1:8000. You can visit this URL in your web browser to see the automatically generated API documentation and test the API endpoints.
 
 **API Endpoints**   
-The system exposes several RESTful endpoints:
+The system exposes several RESTful endpoints:  
 
-POST /students: Create a new student record.
-GET /students: Retrieve a list of students, with optional filtering.
-PATCH /students/{student_id}: Update the details of an existing student.
-DELETE /students/{student_id}: Delete a student record.
+POST /students: Create a new student record.  
+GET /students: Retrieve a list of students, with optional filtering.  
+PATCH /students/{student_id}: Update the details of an existing student.  
+DELETE /students/{student_id}: Delete a student record.  
