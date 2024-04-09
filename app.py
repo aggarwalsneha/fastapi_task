@@ -1,16 +1,12 @@
 import os
 from fastapi import FastAPI,status,Body,HTTPException,Response,Query
-import motor.motor_asyncio
-from pydantic import ConfigDict, BaseModel, Field
+from pydantic import ConfigDict, BaseModel, Field,constr
 from typing import Optional, List
 from bson import ObjectId
-import motor.motor_asyncio
 from pymongo import ReturnDocument
 from pydantic.functional_validators import BeforeValidator
 from typing_extensions import Annotated
-import pymongo
 from pymongo import MongoClient
-import ssl
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -33,7 +29,7 @@ class Address(BaseModel):
 
 class StudentModel(BaseModel):
     id: Optional[PyObjectId] = Field(alias="_id", default=None)
-    name: str = Field(...,max_length=50)
+    name: str = Field(...,max_length=50,min_length=1)
     age: int = Field(gt=0)
     address: Address
     model_config = ConfigDict(
@@ -46,16 +42,20 @@ class UpdateAddress(BaseModel):
     country: Optional[str] = None
 
 class UpdateStudentModel(BaseModel):
-    name: Optional[str] = Field(min_length=2)
-    age: Optional[int] = Field(gt=0)
+    name: Optional[str] = Field(None,min_length=1)
+    age: Optional[int] = Field(None, gt=0)
     address: Optional[UpdateAddress] = None
     model_config = ConfigDict(
         populate_by_name=True,
         arbitrary_types_allowed=True,
     )
 
+class StudentDetail(BaseModel):
+    name: str
+    age: int
+
 class StudentCollection(BaseModel):
-    data: List[StudentModel]
+    data: List[StudentDetail]
 
 class NewStudentResponse(BaseModel):
     id: PyObjectId
