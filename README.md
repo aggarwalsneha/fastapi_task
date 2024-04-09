@@ -2,14 +2,14 @@
 This project is a simple yet powerful Library Management System built with FastAPI. It allows for creating, reading, updating, and deleting student records. Additionally, it supports filtering students based on criteria like country and age, demonstrating the powerful combination of FastAPI with MongoDB for building RESTful APIs.
 
 **Features**  
-Create Student Records: Add new student information including name, age, and address.
-Read Student Records: Retrieve the details of students, with support for filtering by country and age.
-Update Student Records: Modify existing student records.
-Delete Student Records: Remove student records from the system.
+Create Student Records: Add new student information including name, age, and address.  
+Read Student Records: Retrieve the details of students, with support for filtering by country and age.  
+Update Student Records: Modify existing student records.    
+Delete Student Records: Remove student records from the system.   
 
 **Prerequisites**  
-Python 3.8 or higher
-MongoDB
+1. Python 3.8 or higher  
+2. MongoDB
 
 **Installation**  
 1. Clone the repository:
@@ -22,7 +22,7 @@ Edit the MONGODB_URL in your project files to match your MongoDB connection stri
 
 **Running the Application**  
 Run the FastAPI application with:
-uvicorn app:app --reload
+uvicorn app:app --reload   
 This command starts the server on http://127.0.0.1:8000. You can visit this URL in your web browser to see the automatically generated API documentation and test the API endpoints.
 
 **API Endpoints**   
